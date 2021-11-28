@@ -1,0 +1,714 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+/*buttom reset*/
+button {
+  border: none;
+  background-color: transparent;
+}
+/*hover for buttons*/
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  /* background: #fff;
+  color: #000; */
+  transition: 0.2s ease-in-out 0s;
+}
+header {
+  width: 100vw;
+  flex-basis: 14vh;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  flex-flow: row nowrap;
+  /*why was this not working in mobile !!!*/
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#logo {
+  /*reduce logo size*/
+  /* width: 100%; */
+  flex-basis: 30%;
+  font-style: normal;
+  /*logo sized with margin - ask about a better way to do it*/
+  margin: 0vw 6.5%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+#logo img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 1vh;
+  object-fit: cover;
+}
+#logo figcaption {
+  margin: 0.5vh 0vh;
+  font-weight: 100;
+  font-size: 1.5vh;
+  padding-bottom: 0.5vh;
+  color: whitesmoke;
+}
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.nav-links {
+  display: none;
+  position: relative;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+.nav-icons {
+  flex-grow: 1;
+  margin-top: 4%;
+  /* margin-right: 3vw; */
+}
+.nav-icons > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  object-fit: cover;
+  justify-content: space-evenly;
+}
+.nav-icons > ul li {
+  /* margin: 0 0.25vw; */
+  flex: 0 0 7%;
+}
+.nav-icons img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+#about-us {
+  background-image: url(/Assests/Images/empty-suit-isabel-bonner.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 80vh;
+  /* margin-top: -25%; */
+}
+#about-us h1 {
+  color: white;
+  /*why is this not working*/
+  text-decoration: none;
+}
+.about-us-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  /* why is the background image moving down when margin is given to the content */
+  margin: 0 5%;
+  flex-basis: 80%;
+  height: 92%;
+}
+.about-us-content p {
+  /* margin: 2vh 6vw; */
+  padding: 2%;
+  font-size: 90%;
+  color: whitesmoke;
+  /* filter: drop-shadow(1px 1px 0.75rem #696969); */
+  /* color: #696969; */
+}
+.about-us-content h1 {
+  margin: 2vh 6vw;
+}
+.heading {
+  font-family: baskerville-urw, serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 3vh;
+  font-style: italic;
+  text-decoration-line: none;
+  color: black;
+}
+/* collage using flexbox*/
+#insta-inspo {
+  margin-top: -13vh;
+}
+
+section[class*="title-"] {
+  padding-top: 20vh;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+section[class*="title-"] img {
+  width: 5vh;
+  margin: 0 1vw;
+}
+.insta-inspo-produts {
+  display: flex;
+  flex-flow: row wrap;
+  /* margin: 0 10vw; */
+  justify-content: center;
+}
+.insta-inspo-produts li {
+  flex: 0 0 40%;
+  margin: 1vw;
+  position: relative;
+}
+/*col-2 cause it takes spaces equal to two colums*/
+/* why did this have the same specficity as .insta-inspo-produts li ??? */
+.insta-inspo-produts .col-2 {
+  flex-basis: 82%;
+}
+.insta-inspo-produts li a {
+  text-decoration: none;
+  color: black;
+}
+.insta-image {
+  height: 100%;
+  max-width: 100%;
+  /* why is it not covering the whole image; it is now with height 100% */
+  object-fit: cover;
+}
+.hover-action-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+}
+.hover-action-wrapper:hover {
+  transition: all 0.75s ease;
+  opacity: 1;
+}
+.view-products-text {
+  width: 100%;
+  height: 6vh;
+  background-color: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.8;
+  padding-top: 1.35vh;
+  padding-left: 0.75vw;
+  font-size: 1.75vh;
+}
+.view-more {
+  font-size: 1.75vh;
+  position: absolute;
+  right: 0;
+  margin-right: 14vw;
+}
+.view-more:hover {
+  text-decoration: underline;
+  /* transition: all 5s ease; */
+}
+/* Best sellers*/
+/* .title-1 {
+  now why did i do this in the first place ?
+  margin-top: 16vh;
+} */
+/* #best-sellers {
+  margin-top: 2vh;
+  added +ive margin to offset the -ive margin of head-section class
+} */
+.sub-heading {
+  font-weight: 100;
+  font-size: 2vh;
+  /* now why do i need to add this ; why are heading and sunheading coming on the same line  */
+  /* margin-top: 10vh; */
+  margin-bottom: 2.75vh;
+  text-decoration: underline;
+  margin-left: 8%;
+}
+/* #clothing {
+WHY!!!
+  margin-top: -9vh;
+  -ive to offset the 10vh top-margin of sub-heading clothing
+} */
+section[class*="-section"] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.view-more-best-seller {
+  align-self: flex-end;
+  font-size: 1.75vh;
+  padding: 0 8%;
+  cursor: pointer;
+}
+.chevron-icon {
+  display: none;
+}
+.chevron-icon img {
+  display: none;
+}
+.best-seller-products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+article[class*="item-"] {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  flex: 0 0 70%;
+}
+
+article[class*="item-"] figure {
+  flex-basis: 70%;
+  /* height: 45vh; */
+  padding: 0 3vw 0;
+  position: relative;
+  margin: 0 1vw;
+}
+.fashion-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 3vw 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.fashion-image:hover {
+  opacity: 0;
+}
+.product-image:hover {
+  opacity: 1;
+  transition: all 0.75s ease;
+}
+.content-discription {
+  flex-basis: 70%;
+  margin: 0 1vw;
+  padding: 0 3vw 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.product-name-price {
+  margin-top: 1vh;
+  display: flex;
+  font-size: 1.75vh;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  /* margin-right: 0.75vw; */
+}
+.product-action {
+  display: flex;
+  /*did this cause wanted the order opposite of what is in html*/
+  flex-flow: row-reverse nowrap;
+  justify-content: flex-start;
+  margin-top: 1vw;
+  margin-top: 4%;
+  margin-bottom: 10%;
+}
+.action-icon {
+  width: 15%;
+  border: none;
+  background-color: transparent;
+}
+.action-icon img {
+  max-width: 100%;
+}
+
+#acessories,
+#footware {
+  margin-top: 12.5%;
+}
+
+footer {
+  margin-top: 18%;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 10%;
+}
+footer article {
+  margin-top: 6vh;
+  padding-right: 10%;
+}
+
+.footer-heading {
+  font-family: baskerville-urw, serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 1.75vh;
+  /* font-size: 1.75vh; */
+}
+#company-link,
+#policies-link,
+#shop {
+  cursor: pointer;
+}
+.physical-address,
+.link-list {
+  /* font-weight: 100; */
+  color: whitesmoke;
+  font-size: 1.75vh;
+}
+
+.footer-subheading {
+  font-size: 1.75vh;
+  padding: 0.75vh 0;
+  font-weight: 400;
+}
+.footer-subheading:hover {
+  text-decoration: underline;
+}
+#shop .link-list {
+  font-weight: 100;
+  /* padding-left: 0.75vh; */
+}
+.shop-product-list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+section[class*="shop-link-list-row"] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.shop-link {
+  width: 100%;
+  margin-bottom: 17%;
+}
+.shop-type {
+  padding-right: 20%;
+}
+.link-list li {
+  padding: 0.75vh 0 0.75vh 0;
+}
+.link-list li:hover {
+  text-decoration: underline;
+}
+.footer-view-more {
+  font-size: 1.75vh;
+  /* padding-top: 2vh; */
+  right: 0;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.footer-view-more:hover {
+  text-decoration: underline;
+}
+
+.physical-address p {
+  padding: 0.75vh 0 0.75vh 0;
+}
+.social-media,
+.subscription {
+  margin-top: 3vh;
+}
+
+.subscription button {
+  border: 0.05vh solid whitesmoke;
+  /* border-radius: 0.75vh; */
+  transform: initial;
+  transition: initial;
+  padding: 0.5vh;
+  margin-top: 0.5vh;
+  color: whitesmoke;
+  font-family: montserrat, sans-serif;
+}
+.email-input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+input[type="email"] {
+  border: 0.05vh solid whitesmoke;
+  /* border-radius: 0.75vh; */
+  padding: 0.5vh;
+  font-family: montserrat, sans-serif;
+  background-color: black;
+  color: whitesmoke;
+}
+input[placeholder="your email"] {
+  text-align: center;
+}
+#contact-us {
+  order: -1;
+}
+.social-media button {
+  width: 13%;
+}
+.social-icon {
+  max-width: 100%;
+}
+.sparkle-emoji-span {
+  display: inline-block;
+  height: 3vh;
+}
+.sparkle-emoji-span img {
+  height: 100%;
+  vertical-align: middle;
+}
+.direct-to-top {
+  width: 13%;
+  height: auto;
+}
+.direct-to-top img {
+  max-width: 100%;
+}
+.direct-to-top-container {
+  order: -2;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10%;
+  margin-top: 10%;
+}
+/* tablet */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* fix header for tablet if u have time  */
+}
+
+/* desktop */
+@media only screen and (min-width: 768px) {
+  header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  #logo {
+    /*logo sized with margin - ask about a better way to do it*/
+    margin: 0vw 3.5%;
+    flex-basis: 18vh;
+  }
+  nav {
+    flex-flow: row nowrap;
+    margin-bottom: 3vh;
+  }
+  .hamburger-menu-icon {
+    display: none;
+    position: absolute;
+  }
+  .nav-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  .nav-links li a {
+    font-family: baskerville-urw, serif;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 0 1.25vw;
+    font-size: 120%;
+  }
+  .drop-down-icon {
+    width: 0.75vw;
+    height: auto;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .nav-icons {
+    flex: 0 0 10%;
+    margin-right: 3vw;
+    margin-bottom: -0.75vh;
+  }
+  .nav-icons > ul {
+    display: flex;
+    flex-flow: row nowrap;
+    object-fit: cover;
+    justify-content: space-evenly;
+  }
+  .nav-icons > ul li {
+    /* margin: 0 0.25vw; */
+    flex: 0 0 20%;
+  }
+  #about-us {
+    margin-top: -09vh;
+    width: 100vw;
+    height: 100vh;
+  }
+  #about-us h1 {
+    color: black;
+    /*why is this not working*/
+    text-decoration: none;
+  }
+  .about-us-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    /* why is the background image moving down when margin is given to the content */
+    margin: 0vh 54vw 4vh 4vw;
+    flex: 0 0 38vw;
+    height: 92%;
+  }
+  .about-us-content p {
+    margin: 1vh 6vw;
+    font-size: 2vh;
+    color: black;
+  }
+  .insta-inspo-produts {
+    flex-flow: row wrap;
+    margin: 0 10vw;
+    justify-content: center;
+  }
+  .insta-inspo-produts li {
+    flex: 0 0 28%;
+    margin: 1vw;
+    /* position: relative; */
+  }
+  .insta-inspo-produts .col-2 {
+    flex-basis: 28%;
+  }
+  #best-sellers {
+    margin-top: 2vh;
+    /*added +ive margin to offset the -ive margin of head-section class*/
+  }
+  .sub-heading {
+    font-size: 2.75vh;
+    /* now why do i need to add this ; why are heading and sunheading coming on the same line  */
+    /* margin-top: 10vh; */
+    margin-bottom: 2vh;
+    margin-left: 11.5%;
+  }
+  /* .title-1 {
+    now why did i do this in the first place ?
+    margin-top: 16vh;
+  } */
+
+  section[class*="-section"] {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .chevron-icon {
+    display: initial;
+    flex: 0 0 3vw;
+    border: none;
+    background-color: transparent;
+    margin: 0 2vw;
+  }
+  .chevron-icon img {
+    display: initial;
+    max-width: 100%;
+  }
+  .view-more-best-seller {
+    display: none;
+  }
+  .best-seller-products {
+    /* width: 80vw; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  article[class*="item-"] {
+    /* deleted display flex guidelines from here  */
+    flex: 0 0 26.67vw;
+  }
+  article[class*="item-"] figure {
+    flex-basis: 40%;
+    /* height: 45vh; */
+    padding: 0 3vw 0;
+    position: relative;
+    margin: 0 1vw;
+    /* background-color: khaki; */
+  }
+  .content-discription {
+    width: 26vw;
+    margin: 0 1vw;
+    padding: 0 3vw 0;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .product-name-price {
+    margin-top: 1vh;
+    display: flex;
+    font-size: 1.75vh;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-right: 0.75vw;
+  }
+  .product-action {
+    margin-bottom: 0.25vw;
+  }
+  .action-icon {
+    width: 2.5vw;
+    border: none;
+    background-color: transparent;
+  }
+  #clothing {
+    margin-top: 3%;
+  }
+  #acessories,
+  #footware {
+    margin-top: 6%;
+  }
+  footer {
+    margin-top: 14vh;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    padding-left: 0%;
+  }
+  footer article {
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+    margin-right: 0vw;
+    /* padding-right: 3vw;
+    border-right: 0.1vw solid whitesmoke; */
+  }
+  #company-link {
+    margin-left: 10%;
+  }
+  .shop-link {
+    width: initial;
+    margin-bottom: 0%;
+  }
+  .shop-type {
+    padding-right: 0%;
+  }
+  .shop-product-list,
+  section[class*="shop-link-list-row"] {
+    display: initial;
+  }
+  .footer-view-more {
+    font-size: 1.75vh;
+    padding-top: 2vh;
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
+    cursor: pointer;
+  }
+  #contact-us {
+    order: 0;
+  }
+  .social-media button {
+    width: 3vw;
+  }
+  .direct-to-top {
+    width: 3vw;
+    height: auto;
+  }
+  .direct-to-top-container {
+    order: 0;
+    align-self: flex-end;
+    margin-bottom: 4vh;
+    justify-self: normal;
+    display: initial;
+    margin-top: 0%;
+  }
+}
