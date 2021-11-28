@@ -28,7 +28,7 @@ header {
   color: whitesmoke;
   display: flex;
   flex-flow: row nowrap;
-  /*why was this not working in mobile !!!*/
+  /*why was this not working in mobile */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -215,7 +215,7 @@ section[class*="title-"] img {
 }
 /* Best sellers*/
 /* .title-1 {
-  now why did i do this in the first place ?
+
   margin-top: 16vh;
 } */
 /* #best-sellers {
@@ -225,14 +225,14 @@ section[class*="title-"] img {
 .sub-heading {
   font-weight: 100;
   font-size: 2vh;
-  /* now why do i need to add this ; why are heading and sunheading coming on the same line  */
+  /*  why are heading and sunheading coming on the same line  */
   /* margin-top: 10vh; */
   margin-bottom: 2.75vh;
   text-decoration: underline;
   margin-left: 8%;
 }
 /* #clothing {
-WHY!!!
+
   margin-top: -9vh;
   -ive to offset the 10vh top-margin of sub-heading clothing
 } */
@@ -475,10 +475,6 @@ input[placeholder="your email"] {
   margin-right: 10%;
   margin-top: 10%;
 }
-/* tablet */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* fix header for tablet if u have time  */
-}
 
 /* desktop */
 @media only screen and (min-width: 768px) {
@@ -580,13 +576,13 @@ input[placeholder="your email"] {
   }
   .sub-heading {
     font-size: 2.75vh;
-    /* now why do i need to add this ; why are heading and sunheading coming on the same line  */
+    /* why are heading and sunheading coming on the same line  */
     /* margin-top: 10vh; */
     margin-bottom: 2vh;
     margin-left: 11.5%;
   }
   /* .title-1 {
-    now why did i do this in the first place ?
+
     margin-top: 16vh;
   } */
 
